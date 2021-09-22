@@ -15,7 +15,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      getSchool()
+    
+        self.tableView.register(UINib(nibName: "NYCSchoolTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+       //        tableView.dataSource = self
+
+        getSchool()
+        
     }
 
     //calling http request, loading tableview.
