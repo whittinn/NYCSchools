@@ -9,7 +9,7 @@ import Foundation
 
 
 struct SATScore: Codable {
-   
+    let dbn : String
     let schoolName : String
     let numOfSatTestTakers : String
     let satCriticalReadingAvgScore: String
@@ -18,6 +18,7 @@ struct SATScore: Codable {
 
     enum CodingKeys: String, CodingKey {
     
+        case dbn
         case schoolName = "school_name"
         case numOfSatTestTakers = "num_of_sat_test_takers"
         case satCriticalReadingAvgScore = "sat_critical_reading_avg_score"

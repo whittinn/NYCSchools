@@ -9,6 +9,7 @@ import UIKit
 
 class SATScoreTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dbnLabel: UILabel!
     @IBOutlet weak var averageWriting: UILabel!
     @IBOutlet weak var averageReading: UILabel!
     @IBOutlet weak var averageMath: UILabel!

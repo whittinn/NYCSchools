@@ -15,7 +15,7 @@ class NetworkManager {
     
     
     //Creating a http request.
-    func downloadNYCSchools(completion: @escaping (Result<Response,Error>)->Void){
+    func downloadNYCSchools(completion: @escaping (Result<NewYorkSchools,Error>)->Void){
          
          guard let url = URL(string: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json") else {
              fatalError("Error retrieving url")
@@ -24,16 +24,18 @@ class NetworkManager {
      URLSession.shared.dataTask(with: url) { (data, response, error) in
          guard let data = data, response != nil, error == nil else {
              print("Error retrieving data")
+            completion(.failure(error!))
             
              return
      }
          print("downloaded")
          
          do{
-             let decode = JSONDecoder()
-             let school = try decode.decode(Response.self, from: data)
-            completion(.success(school))
-             print(school)
+             let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+             let schools = try decoder.decode([School].self, from: data)
+         completion(.success(schools))
+             print(schools)
      }catch{
              print("no data to return")
         completion(.failure(error))
@@ -44,31 +46,35 @@ class NetworkManager {
          
         }
     
-//    func downloadSAT(completion: (SAT<Response,Error>) -> Void){
-//
-//        guard let url = URL(string: "https://data.cityofnewyork.us/resource/f9bf-2cp4.json") else {
-////            fatalError("Error retrieving URL")
-//        }
-//
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let data = data, response != nil, error == nil else {
-//                print("Error retrieving data")
-//                completion([])
-//                return
-//            }
-//            print("downloaded")
-//            do{
-//                let decode = JSONDecoder()
-//                let sat = try decode.decode(SATScore.self, from: data)
-//                print(sat)
-//
-//            }catch{
-//                print("no data to return")
-//                completion([])
-//
-//            }
-//        }.resume()
-//
-//    }
+    func downloadSAT(completion: @escaping (Result<SATScore,Error>) -> Void){
+
+        guard let url = URL(string: "https://data.cityofnewyork.us/resource/f9bf-2cp4.json?dbn=") else {
+            fatalError("Error retrieving URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data, response != nil, error == nil else {
+                print("Error retrieving data")
+                completion(.failure(error!))
+                print(error)
+                return
+            }
+            print("downloaded")
+            do{
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let sat = try decoder.decode(SATScore.self, from: data)
+                completion(.success(sat))
+                print(sat)
+
+            }catch{
+                print("no data to return")
+                completion(.failure(error))
+
+            }
+        }.resume()
+
+    }
 
 }

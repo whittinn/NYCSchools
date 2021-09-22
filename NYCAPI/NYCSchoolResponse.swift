@@ -11,13 +11,13 @@ typealias Response = [[String: String]]
 
 
 
-struct School {
-    var primary_address_line_1 : String
-    var school_name : String
-    var phone_number : String
+struct School : Codable  {
+    var schools : [NewYorkSchools]
          
 }
 
-struct NewYorkSchool {
-    var school : [School]
+struct NewYorkSchools : Codable {
+    var primary_address_line_1 : String
+    var school_name : String
+    var phone_number : String
 }
