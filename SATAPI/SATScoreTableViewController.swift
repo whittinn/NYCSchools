@@ -9,10 +9,9 @@ import UIKit
 
 class SATScoreTableViewController: UITableViewController {
 
-    init () {}
 
     
-    var satScores : [String]
+    var satScores : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
