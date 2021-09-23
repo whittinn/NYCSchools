@@ -7,17 +7,11 @@
 
 import Foundation
 
-typealias Response = [[String: String]]
 
-
-
-struct School : Codable  {
-    var schools : [NewYorkSchools]
-         
-}
-
-struct NewYorkSchools : Codable {
-    var primary_address_line_1 : String
-    var school_name : String
-    var phone_number : String
+//This is my parse Json I created based on the data returned from the api.
+struct NewYorkSchool : Codable {
+    let schoolName : String
+    let phoneNumber : String
+    let location : String
+    let dbn: String
 }

@@ -21,7 +21,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RkJ-8o-JLJ">
-                                <rect key="frame" x="0.0" y="444" width="414" height="418"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="OEh-Tf-K56">
@@ -39,7 +39,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RkJ-8o-JLJ" secondAttribute="trailing" id="1D8-jL-rpy"/>
-                            <constraint firstItem="RkJ-8o-JLJ" firstAttribute="top" secondItem="zrX-0y-mNQ" secondAttribute="bottom" constant="300" id="4By-Kc-PCq"/>
+                            <constraint firstItem="RkJ-8o-JLJ" firstAttribute="top" secondItem="zrX-0y-mNQ" secondAttribute="bottom" id="2AM-r6-sk8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RkJ-8o-JLJ" secondAttribute="bottom" id="Ba5-Ch-0Ki"/>
                             <constraint firstItem="zrX-0y-mNQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D2A-nT-xfV"/>
                             <constraint firstItem="zrX-0y-mNQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EOZ-Kh-g5P"/>
@@ -51,40 +51,11 @@
                     <connections>
                         <outlet property="searchBar" destination="zrX-0y-mNQ" id="TkV-5E-0jc"/>
                         <outlet property="tableView" destination="RkJ-8o-JLJ" id="5Fi-8I-teU"/>
-                        <outlet property="tableViewTopConstraint" destination="4By-Kc-PCq" id="IJd-0U-Ayu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713.04347826086962" y="79.6875"/>
-        </scene>
-        <!--Score Table View Controller-->
-        <scene sceneID="QXl-OP-zm4">
-            <objects>
-                <tableViewController id="7XH-pr-REQ" customClass="SATScoreTableViewController" customModule="NycSchools" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SZi-Cm-LOU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SATcell" rowHeight="440" id="dN8-Cy-pXq">
-                                <rect key="frame" x="0.0" y="28" width="414" height="440"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dN8-Cy-pXq" id="7l8-kS-a9y">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="7XH-pr-REQ" id="9Bl-VV-jUr"/>
-                            <outlet property="delegate" destination="7XH-pr-REQ" id="W2b-Wt-q8o"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Fx-3A-HH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1634.7826086956522" y="92.410714285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XHb-2T-mDA">
